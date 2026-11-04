@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Conectando con Transbank</title>
+<style>body{font-family:system-ui,sans-serif;background:#000;color:#fff;display:flex;align-items:center;justify-content:center;height:100vh;margin:0}</style></head>
+<body><p id="m">Conectando con Transbank…</p>
+<script>
+(function(){
+  var p = new URLSearchParams(location.search), u = p.get('u'), t = p.get('t'), ok = false;
+  try { var h = new URL(u).hostname; ok = (h === 'webpay3gint.transbank.cl' || h === 'webpay3g.transbank.cl'); } catch (e) {}
+  if (!ok || !t) { document.getElementById('m').textContent = 'Enlace no válido.'; return; }
+  var f = document.createElement('form'); f.method = 'POST'; f.action = u;
+  var i = document.createElement('input'); i.type = 'hidden'; i.name = 'TBK_TOKEN'; i.value = t;
+  f.appendChild(i); document.body.appendChild(f); f.submit();
+})();
+</script></body></html>

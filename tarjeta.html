@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tarjeta · Raja Móvil</title>
+<style>body{font-family:system-ui,sans-serif;background:#000;color:#fff;display:flex;align-items:center;justify-content:center;height:100vh;margin:0;text-align:center;padding:24px}h1{font-size:26px}p{color:#aaa}</style></head>
+<body><div><h1 id="t"></h1><p id="s"></p></div>
+<script>
+var ok = new URLSearchParams(location.search).get('ok') === '1';
+document.getElementById('t').textContent = ok ? 'Tarjeta guardada' : 'No se guardó la tarjeta';
+document.getElementById('s').textContent = ok ? 'Ya puedes volver a Raja Móvil.' : 'Vuelve a Raja Móvil e inténtalo de nuevo.';
+</script></body></html>
