@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Tarjeta · Raja Móvil</title>
+<title>Tarjeta · Móvi</title>
 <style>body{font-family:system-ui,sans-serif;background:#000;color:#fff;display:flex;align-items:center;justify-content:center;height:100vh;margin:0;text-align:center;padding:24px}h1{font-size:26px}p{color:#aaa}a.b{display:inline-block;margin-top:24px;background:#06c167;color:#000;font-weight:700;text-decoration:none;padding:14px 28px;border-radius:12px;font-size:17px}</style></head>
-<body><div><h1 id="t"></h1><p id="s"></p><a class="b" id="v" href="movigo://login-callback">Volver a Raja Móvil</a></div>
+<body><div><h1 id="t"></h1><p id="s"></p><a class="b" id="v" href="movigo://login-callback">Volver a Móvi</a></div>
 <script>
 var ok = new URLSearchParams(location.search).get('ok') === '1';
 document.getElementById('t').textContent = ok ? 'Tarjeta guardada' : 'No se pudo confirmar la tarjeta';
-document.getElementById('s').textContent = ok ? 'Toca el botón para volver a Raja Móvil.' : 'Vuelve a Raja Móvil y revisa tu Perfil. Si la tarjeta no aparece, inténtalo de nuevo.';
+document.getElementById('s').textContent = ok ? 'Toca el botón para volver a Móvi.' : 'Vuelve a Móvi y revisa tu Perfil. Si la tarjeta no aparece, inténtalo de nuevo.';
 if (/Android/i.test(navigator.userAgent)) {
   document.getElementById('v').href = 'intent://login-callback#Intent;scheme=movigo;package=com.movigo.movigo;end';
 }
